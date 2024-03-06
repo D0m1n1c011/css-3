@@ -56,11 +56,9 @@ def image_gen() -> None:
 
     if run_button and input_text.strip() != "":
         with st.spinner("Loading"):
-            image_url = generate_image(input_text)
+            image_url = generate_image(prompt)
             st.image(image_url)
 
-    else:
-        st.warning("You can't send an empty message to the artist.")
 
 image_gen()
 
