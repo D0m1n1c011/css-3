@@ -39,7 +39,7 @@ def image_gen() -> None:
 
     col1, col2 = st.columns([3,5])
     
-    image_style = col2.selectbox('Choose your image style', ["Photo ", "hyperrealistic ", "impressionistic ", "abastracist, anime "])
+    image_style = col2.selectbox('Choose your image style', ["Photo ", "hyperrealistic ", "impressionistic ", "abastracist ", "anime "])
     animal = col2.selectbox('Choose your animal', ["giraffe ", "bear ", "penguin "])
     activity = col2.selectbox('Choose your activity', ["reading a book "," doing the coolest bike trick ","playing league of legends and tilting ", "going on an epic journey "])
     input_text = st.text_area("Any further stipulations?")
