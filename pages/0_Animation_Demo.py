@@ -33,10 +33,10 @@ def generate_image(prompt):
 def image_gen() -> None:
     st.set_page_config(
         page_title="Image Generation",
-        page_icon=""
+        page_icon="")
     st.markdown("# Create Your Animal")
     st.sidebar.header("Image Generation")
-    )
+    
 
     st.write("#The artist will create your image")
 
