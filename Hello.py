@@ -20,15 +20,52 @@ genai.configure(api_key=st.secrets["gemini_api_key"])
 LOGGER = get_logger(__name__)
 
 model = genai.GenerativeModel(model_name="gemini-1.0-pro")
-convo = model.start_chat(history = [])
+convo = model.start_chat(history = [
+{
+    "role": "user",
+    "parts": ["Hello! What is your name?"]
+},
+{
+    "role": "model",
+    "parts": ["I am Bob"]
+},
+{
+    "role": "user",
+    "parts": ["What do you do for a living"]
+},
+{
+    "role": "model",
+    "parts": ["I create star charts and label the characteristics of different stars"]
+}, 
+{
+    "role": "user",
+    "parts": ["What are interesting characteristics of Sirius A"]
+},
+{
+    "role": "model",
+    "parts": ["Sirius A is about twice as massive as the Sun ( M ☉) and has an absolute visual magnitude of +1.43. It is 25 times as luminous as the Sun, but has a significantly lower luminosity than other bright stars such as Canopus, Betelgeuse, or Rigel. The system is between 200 and 300 million years old."]
+} 
+])
 
 def run():
     st.set_page_config(
-        page_title="Hello",
+        page_title="Chat with Bob",
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# Bob will answer thine questions")
+
+    input_text = st.text_area("What would you like to ask Bob?")
+
+    chat_button = st.button("Send")
+
+    if chat_button and input_text.strip() != "":
+        with st.spinner("Loading"):
+            convo.send_message(input_text)
+            st.success(convo.last text)
+
+    else:
+        st.warning("You can't send an empty message to the BOB.")
 
     st.sidebar.success("Select a demo above.")
 
