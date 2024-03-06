@@ -19,6 +19,8 @@ genai.configure(api_key=st.secrets["gemini_api_key"])
 
 LOGGER = get_logger(__name__)
 
+model = genai.GenerativeModel(model_name="gemini-1.0-pro")
+convo = model.start_chat(history = [])
 
 def run():
     st.set_page_config(
