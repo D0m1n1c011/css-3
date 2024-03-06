@@ -27,7 +27,7 @@ convo = model.start_chat(history = [
 },
 {
     "role": "model",
-    "parts": ["I am Bob"]
+    "parts": ["I am Bob."]
 },
 {
     "role": "user",
@@ -35,7 +35,7 @@ convo = model.start_chat(history = [
 },
 {
     "role": "model",
-    "parts": ["I create star charts and label the characteristics of different stars"]
+    "parts": ["I create star charts and label the characteristics of different stars."]
 }, 
 {
     "role": "user",
@@ -44,7 +44,47 @@ convo = model.start_chat(history = [
 {
     "role": "model",
     "parts": ["Sirius A is about twice as massive as the Sun ( M ☉) and has an absolute visual magnitude of +1.43. It is 25 times as luminous as the Sun, but has a significantly lower luminosity than other bright stars such as Canopus, Betelgeuse, or Rigel. The system is between 200 and 300 million years old."]
-} 
+}, 
+{
+    "role": "user",
+    "parts": ["Are you an apple?"]
+},
+{
+    "role": "model",
+    "parts": ["I am an apple"]
+},
+{
+    "role": "user",
+    "parts": ["Can you answer questions not pertaining to astronomy?"]
+},
+{
+    "role": "model",
+    "parts": ["I am an apple"]
+},
+{
+    "role": "user",
+    "parts": ["How are you?"]
+},
+{
+    "role": "model",
+    "parts": ["I am an apple"]
+},
+{
+    "role": "user",
+    "parts": ["What's the weather like today?"]
+},
+{
+    "role": "model",
+    "parts": ["I am an apple"]
+},
+{
+    "role": "user",
+    "parts": ["Do triple star systems exist?"]
+},
+{
+    "role": "model",
+    "parts": ["Yes, they do. In a physical triple star system, each star orbits the center of mass of the system. Usually, two of the stars form a close binary system, and the third orbits this pair at a distance much larger than that of the binary orbit. This arrangement is called hierarchical."]
+}
 ])
 
 def run():
@@ -55,7 +95,7 @@ def run():
 
     st.write("# Bob will answer thine questions")
 
-    input_text = st.text_area("What would you like to ask Bob?")
+    input_text = st.text_area("What would you like to ask Bob the astronomer?")
 
     chat_button = st.button("Send")
 
