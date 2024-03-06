@@ -36,13 +36,23 @@ def image_gen() -> None:
         page_icon="")
     st.markdown("# Create Your Animal")
     st.sidebar.header("Image Generation")
+
+    col1, col2 = st.columns([3,5])
     
+    image_style = col2.selectbox('Choose your image style', ["Photo ", "hyperrealistic ", "impressionistic ", "abastracist, anime "])
+    animal = col2.selectbox('Choose your animal', ["giraffe ", "bear ", "penguin "])
+    activity = col2.selectbox('Choose your activity', ["reading a book "," doing the coolest bike trick ","playing league of legends and tilting ", "going on an epic journey "])
+    input_text = st.text_area("Any further stipulations?")
+    run_button = st.button("Send")
 
     st.write("#The artist will create your image")
 
-    input_text = st.text_area("What would you like made?")
+    prompt = f"Help me generate an image based on the \
+        following: {image_style} {animal} {activity}, with \
+        some additional information: {input_text}. \
+        Make sure it's very epic."
 
-    run_button = st.button("Send")
+
 
     if run_button and input_text.strip() != "":
         with st.spinner("Loading"):
