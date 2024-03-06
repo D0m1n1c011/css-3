@@ -14,6 +14,8 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
+import google.generativeai as genai
+genai.configure(api_key=st.secrets["gemini_api_key"])
 
 LOGGER = get_logger(__name__)
 
